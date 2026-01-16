@@ -1,0 +1,180 @@
+/* =========================
+   RESET & GLOBAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e1b4b, #312e81);
+    color: #e5e7eb;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(90deg, #0f172a, #1e1b4b);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+}
+
+nav a {
+    color: #e0e7ff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    background: linear-gradient(135deg, #7c3aed, #2563eb);
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(124,58,237,0.6);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+main {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 42px;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(16px);
+    border-radius: 22px;
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.65),
+        inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+/* =========================
+   PROFILE SECTION
+========================= */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 36px;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    background:
+        linear-gradient(#0f172a, #0f172a) padding-box,
+        linear-gradient(135deg, #7c3aed, #2563eb) border-box;
+    box-shadow: 0 0 35px rgba(124,58,237,0.7);
+}
+
+.profile-text p {
+    margin-top: 8px;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1 {
+    font-size: 2.4rem;
+    background: linear-gradient(90deg, #a78bfa, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 14px;
+    color: #93c5fd;
+    border-left: 4px solid #7c3aed;
+    padding-left: 14px;
+    font-size: 1.35rem;
+}
+
+/* =========================
+   TEXT
+========================= */
+p {
+    margin-bottom: 14px;
+    line-height: 1.8;
+    color: #d1d5db;
+    text-align: justify;
+}
+
+strong {
+    color: #e0e7ff;
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+@media (max-width: 768px) {
+    main {
+        margin: 30px 16px;
+        padding: 28px;
+    }
+
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile img {
+        width: 120px;
+        height: 120px;
+    }
+}
+/* =========================
+   ANIMATION (JS SUPPORT)
+========================= */
+main {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+main.show {
+    opacity: 1;
+    transform: translateY(0);
+}
